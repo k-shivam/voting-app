@@ -18,7 +18,7 @@ class Polls extends Component {
   }
 
   handleDelete(id) {
-    axios.delete(`http://localhost:${PORT}/api/polls/${id}`);
+    axios.delete(`https://shivam-voting-app.herokuapp.com/api/polls/${id}`);
     window.location.reload();
   }
 
