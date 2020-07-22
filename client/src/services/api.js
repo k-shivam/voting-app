@@ -1,6 +1,7 @@
 import axios from 'axios';
-
-const host = 'http://localhost:4000/api';
+require('dotenv').config();
+port = process.env.PORT || 5000
+const host = `http://localhost:${port}/api`;
 
 export const setToken = token => {
   if (token) {
