@@ -1,6 +1,6 @@
 import axios from 'axios';
 require('dotenv').config();
-port = process.env.PORT || 5000
+const port = process.env.PORT || 5000
 const host = `http://localhost:${port}/api`;
 
 export const setToken = token => {
