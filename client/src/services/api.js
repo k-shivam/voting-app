@@ -2,6 +2,7 @@ import axios from 'axios';
 require('dotenv').config();
 const port = process.env.PORT || 5000
 const host = `http://localhost:${port}/api`;
+const url = '/'
 
 export const setToken = token => {
   if (token) {
@@ -12,7 +13,8 @@ export const setToken = token => {
 };
 
 export const call = async (method, path, data) => {
-  const response = await axios[method](`${host}/${path}`, data);
+    const response = await axios[method](`${url}`, data);
+//  const response = await axios[method](`${host}/${path}`, data);
   return response.data;
 };
 

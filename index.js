@@ -28,11 +28,10 @@ app.use((req, res, next) => {
 
 app.use(handle.error);
 
+app.use(express.static('client/build'));
 
-
-if (process.env.NODE_ENV === 'production' || process.env.NODE_ENV === 'staging') {
-    app.use(express.static('client/build'));
-    app.get('/', (req, res) => {
+if (process.env.NODE_ENV === 'production') {
+    app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname + '/client/build/index.html'));
     });
 }
