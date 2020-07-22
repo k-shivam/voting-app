@@ -20,21 +20,22 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/api/users', usersRouter);
 app.use('/api/polls', pollsRouter);
 
-app.use((req, res, next) => {
-  let err = new Error('Not Found');
-  err.status = 404;
-  next(err);
-});
 
 app.use(handle.error);
 
 app.use(express.static('client/build'));
 
-if (process.env.NODE_ENV === 'production') {
-    app.get('*', (req, res) => {
-        res.sendFile(path.join(__dirname + '/client/build/index.html'));
-    });
-}
+//if (process.env.NODE_ENV === 'production') {
+//    app.get('*', (req, res) => {
+//        res.sendFile(path.join(__dirname + '/client/build/index.html'));
+//    });
+//}
+
+app.use((req, res, next) => {
+  let err = new Error('Not Found');
+  err.status = 404;
+  next(err);
+});
 
 
 app.listen(PORT, () => console.log(`Server listening on port ${PORT}`));
