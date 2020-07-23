@@ -21,7 +21,7 @@ export const updatePoll = poll => ({
 export const getPolls = () => {
   return async dispatch => {
     try {
-      const polls = await API.Call('get', 'api/polls');
+      const polls = await API.call('get', 'api/polls');
       dispatch(setPolls(polls));
       dispatch(removeError());
     } catch (err) {
