@@ -12,7 +12,7 @@ export const setToken = token => {
 };
 
 export const call = async (method, path, data) => {
-  const response = await axios[method](`${path}`, data);
+  const response = await axios[method](data);
   return response.data;
 };
 
