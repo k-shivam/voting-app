@@ -22,7 +22,7 @@ const Navbar = ({ auth, logout }) => (
             </li>
             <li>
               <Link className="navbar-item" to="/login">
-                Login
+                Login To Vote and Delete your own polls
               </Link>
             </li>
           </Fragment>
@@ -39,6 +39,9 @@ const Navbar = ({ auth, logout }) => (
       </ul>
       {auth.isAuthenticated && (
         <p className="navbar-user">Logged in as {auth.user.username}</p>
+      )}
+      {auth.isAuthenticated && (
+         <p className="navbar-user">You Can Delete Polls only under My polls</p>
       )}
     </div>
   </nav>
