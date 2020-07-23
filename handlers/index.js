@@ -1,6 +1,6 @@
 module.exports = {
   ...require('./auth'),
-  ...require('./polls'),
+  ...require('./poll'),
 };
 
 module.exports.error = (err, req, res, next) => {
