@@ -1,7 +1,7 @@
 import API from '../../services/api';
 import { SET_POLLS, SET_CURRENT_POLL , UPDATE_CURRENT_POLL} from '../actionTypes';
 import { addError, removeError } from './error';
-import axios from axios
+import axios from 'axios'
 
 
 export const setPolls = polls => ({
