@@ -23,7 +23,7 @@ class Polls extends Component {
   handleSelect(id) {
     const { history } = this.props;
     console.log(history);
-    history.push(`/poll/${id}`);
+    history.push(id);
   }
 
   render() {
