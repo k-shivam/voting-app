@@ -60,7 +60,7 @@ export const createPoll = data => {
 export const getCurrentPoll = path => {
   return async dispatch => {
     try {
-      const poll = await API.call('get', `/${path}`);
+      const poll = await API.call('get', `/polls/${path}`);
       dispatch(setCurrentPoll(poll));
       dispatch(removeError());
     } catch (err) {
