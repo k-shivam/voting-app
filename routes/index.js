@@ -1,2 +1,2 @@
-module.exports.auth = require('./auth');
-module.exports.poll = require('./poll');
+module.exports.auth = require('./api/auth');
+module.exports.poll = require('./api/poll');
