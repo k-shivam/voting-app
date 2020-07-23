@@ -4,8 +4,6 @@ import { connect } from 'react-redux';
 import { getPolls, getUserPolls } from '../store/actions';
 import axios from 'axios';
 
-const PORT = process.env.PORT || 5000;
-
 class Polls extends Component {
   constructor(props) {
     super(props);
@@ -18,7 +16,7 @@ class Polls extends Component {
   }
 
   handleDelete(id) {
-    axios.delete(`https://shivam-voting-app.herokuapp.com/api/polls/${id}`);
+    axios.delete(`api/polls/${id}`);
     window.location.reload();
   }
 

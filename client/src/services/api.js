@@ -1,8 +1,7 @@
 import axios from 'axios';
 require('dotenv').config();
-const port = process.env.PORT || 5000
-const host = 'https://shivam-voting-app.herokuapp.com/api';
-const url = '/'
+//const host = 'http://localhost:4000/api';
+
 
 export const setToken = token => {
   if (token) {
