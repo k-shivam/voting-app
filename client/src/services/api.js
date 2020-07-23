@@ -1,6 +1,6 @@
 import axios from 'axios';
 require('dotenv').config();
-//const host = 'http://localhost:4000/api';
+const host = 'http://localhost:4000/api';
 
 
 export const setToken = token => {
