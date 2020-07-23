@@ -23,7 +23,7 @@ export const logout = () => {
 export const authUser = (path, data) => {
   return async dispatch => {
     try {
-      const { token, ...user } = await API.call('post', `auth/${path}`, data);
+      const { token, ...user } = await API.call('post', `api/auth/${path}`, data);
       localStorage.setItem('jwtToken', token);
       API.setToken(token);
       dispatch(setCurrentUser(user));
