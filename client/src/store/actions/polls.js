@@ -21,7 +21,7 @@ export const updatePoll = poll => ({
 export const getPolls = () => {
   return async dispatch => {
     try {
-      const polls = await API.Call('get', 'polls');
+      const polls = await API.Call('get', 'api/polls');
       dispatch(setPolls(polls));
       dispatch(removeError());
     } catch (err) {
@@ -34,7 +34,7 @@ export const getPolls = () => {
 export const getUserPolls = () => {
   return async dispatch => {
     try {
-      const polls = await API.call('get', 'polls/user');
+      const polls = await API.call('get', 'api/polls/user');
       dispatch(setPolls(polls));
       dispatch(removeError());
     } catch (err) {
@@ -47,7 +47,7 @@ export const getUserPolls = () => {
 export const createPoll = data => {
   return async dispatch => {
     try {
-      const poll = await API.call('post', 'polls', data);
+      const poll = await API.call('post', 'api/polls', data);
       dispatch(setCurrentPoll(poll));
       dispatch(removeError());
     } catch (err) {
@@ -60,7 +60,7 @@ export const createPoll = data => {
 export const getCurrentPoll = path => {
   return async dispatch => {
     try {
-      const poll = await API.call('get', `polls/${path}`);
+      const poll = await API.call('get', `api/polls/${path}`);
       dispatch(setCurrentPoll(poll));
       dispatch(removeError());
     } catch (err) {
@@ -73,7 +73,7 @@ export const getCurrentPoll = path => {
 export const vote = (path, data) => {
   return async dispatch => {
     try {
-      const poll = await API.call('post', `polls/${path}`, data);
+      const poll = await API.call('post', `api/polls/${path}`, data);
       dispatch(setCurrentPoll(poll));
     } catch (err) {
       const { error } = err.response.data;
@@ -85,7 +85,7 @@ export const vote = (path, data) => {
 export const updateCurrentPoll = (path, data) =>{
     return async dispatch => {
         try{
-            const poll = await API.call('put', `polls/${path}`, data);
+            const poll = await API.call('put', `api/polls/${path}`, data);
             dispatch(updatePoll(poll));
         }catch(err){
             const { error } = err.response.data;
