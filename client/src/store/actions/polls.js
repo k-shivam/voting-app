@@ -1,6 +1,7 @@
 import API from '../../services/api';
 import { SET_POLLS, SET_CURRENT_POLL , UPDATE_CURRENT_POLL} from '../actionTypes';
 import { addError, removeError } from './error';
+import axios from axios
 
 
 export const setPolls = polls => ({
@@ -60,7 +61,7 @@ export const createPoll = data => {
 export const getCurrentPoll = path => {
   return async dispatch => {
     try {
-      const poll = await API.call('get',  '/api' + `/polls/${path}`);
+      const poll = axios.get(`https://shivam-voting-app.herokuapp.com/api/polls/${path}`);
       dispatch(setCurrentPoll(poll));
       dispatch(removeError());
     } catch (err) {
